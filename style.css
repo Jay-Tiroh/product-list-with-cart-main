@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
 :root {
   --red: hsl(14, 86%, 42%);
   --green: hsl(159, 69%, 38%);
@@ -20,6 +30,7 @@
   src: url("assets/fonts/RedHatText-VariableFont_wght.ttf");
 }
 body {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   background-color: #fcf8f5;
   width: 100svw;
   height: 100svh;
@@ -79,7 +90,8 @@ body {
 /* CONFIRMATION MENU */
 
 .confirmed-order {
-  width: clamp(400px, 90svw, 500px);
+  width: clamp(300px, 90svw, 500px);
+  height: clamp(500px, 80svh, 700px);
   background-color: white;
   border-radius: 20px;
   display: flex;
@@ -90,7 +102,7 @@ body {
   padding: 10px 20px;
 
   position: fixed;
-  top: 10px;
+  top: 4rem;
   z-index: 9999;
 }
 
@@ -509,6 +521,10 @@ em,
     width: 80%;
     margin: 20px 0;
   }
+
+  .confirmed-order {
+    top: 10px;
+  }
 }
 
 @media screen and (max-width: 640px) {
@@ -517,6 +533,9 @@ em,
   }
   .wrapper {
     padding: auto;
+  }
+  .confirmed-order {
+    top: 10px;
   }
 }
 
@@ -536,5 +555,9 @@ em,
     padding: 0;
     margin: 0;
     width: 100%;
+  }
+  .confirmed-order {
+    top: 10px;
+    max-height: 80svh;
   }
 }
